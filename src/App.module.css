@@ -1,0 +1,33 @@
+.app {
+  font-family: 'Poppins', sans-serif;
+  background-color: #00123b;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-items: center; /* Centra las cards dentro de la grilla */
+}
+
+
+.category {
+  text-align: center; /* Centra el h2 */
+}
+
+.category h2 {
+  color: white;
+  margin-top: 30px;
+  cursor: pointer;
+  display: inline-block; /* Hover solo sobre el texto */
+  transition: color 0.3s ease;
+}
+
+.category h2:hover {
+  color: #ffb347;
+}
