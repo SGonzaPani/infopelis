@@ -3,7 +3,6 @@ import Navbar from "./componentes/Navbar.jsx";
 import Card from "./componentes/Card.jsx";
 import { movies } from "./componentes/movies.js";
 import styles from "./App.module.css";
-import Container from "./componentes/container.jsx";
 import Footer from "./componentes/footer.jsx";
 
 function App() {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './card.module.css';
+import styles from './Card.module.css';
 
 
 function Card({ image, title, description }) {
