@@ -1,35 +1,32 @@
-import React from "react";
-import Navbar from "./componentes/Navbar.jsx";
-import Card from "./componentes/Card.jsx";
-import { movies } from "./componentes/movies.js";
+import React, { useState } from "react";
+import Navbar from "./Navbar.jsx";
+import Footer from "./Footer.jsx";
+import CategorySection from "./Categorias.jsx";
 import styles from "./App.module.css";
-import Footer from "./componentes/footer.jsx";
 
 function App() {
+  const categories = ["drama", "animation", "comedy"];
+  const [search, setSearch] = useState("");
+
   return (
     <div className={styles.app}>
-      <Navbar />
-      {["Peliculas", "Series", "Deportes"].map((category) => (
-        <div className={styles.category}>
-        <h2>{category}</h2>
-    <div className={styles.cardsContainer}>
-      {movies
-        .filter((movie) => movie.category === category)
-        .map((movie) => (
-          <Card
-            key={movie.id}
-            image={movie.image}
-            title={movie.title}
-            description={movie.description}
-          />
-        ))}
-    </div>
-  </div>
-))}
+      <Navbar categories={categories} setSearch={setSearch} />
+
+
+      <CategorySection id="favorites" category="favorites" search={search} />
+
+      {categories.map((cat) => (
+        <CategorySection
+          key={cat}
+          id={cat} 
+          category={cat}
+          search={search}
+        />
+      ))}
 
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

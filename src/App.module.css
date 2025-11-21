@@ -7,33 +7,7 @@
   flex-direction: column;
 }
 
-.container {
-  background-color: #181818;
-  padding: 30px;
+html {
+  scroll-behavior: smooth;
 }
 
-  
-
-.cardsContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  justify-items: center;
-}
-
-.category {
-  text-align: center;
-}
-
-.category h2 {
-  color: white;
-  margin-top: 30px;
-  cursor: pointer;
-  display: inline-block;
-  transition: color 0.3s ease;
-}
-
-.category h2:hover {
-  color: #ffb347;
-}
