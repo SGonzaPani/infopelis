@@ -1,0 +1,104 @@
+.container {
+  display: flex;
+  gap: 30px;
+  padding: 40px;
+  color: white;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.poster {
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.info {
+  flex: 1;
+  max-width: 600px;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.favBtn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 10px 0;
+  transition: 0.2s ease;
+}
+
+.favBtn:hover {
+  transform: scale(1.1);
+}
+
+.backBtn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  backdrop-filter: blur(5px);
+  transition: 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.backBtn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+.trailerContainer {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+}
+
+.trailerContainer::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+}
+
+.trailer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 16px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .poster {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .trailerContainer {
+    max-width: 100%;
+  }
+}

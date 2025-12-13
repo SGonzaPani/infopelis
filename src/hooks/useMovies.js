@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getMoviesByCategory } from "./Services.js";
+import { getMoviesByCategory } from "../services/Services";
 
 export function useMovies(category) {
   return useQuery({

@@ -11,3 +11,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.welcome {
+  font-size: 2rem;
+  color: #ffb347;
+  text-align: center;
+  margin-top: 40px;
+  text-shadow: 0 0 10px #000;
+}

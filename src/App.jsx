@@ -1,32 +1,34 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar.jsx";
-import Footer from "./Footer.jsx";
-import CategorySection from "./Categorias.jsx";
+import Navbar from "./components/Navbar.jsx";
+import AppRouter from "./router/AppRouter.jsx";
 import styles from "./App.module.css";
 
-function App() {
-  const categories = ["drama", "animation", "comedy"];
+export default function App() {
   const [search, setSearch] = useState("");
+  const username = localStorage.getItem("username");
+  const [customMovies, setCustomMovies] = useState([]);
+
+  const addMovie = (movie) => {
+    setCustomMovies((prev) => [...prev, movie]);
+  };
+
+  const categories = ["drama", "animation", "comedy"];
 
   return (
     <div className={styles.app}>
-      <Navbar categories={categories} setSearch={setSearch} />
+      <Navbar 
+        categories={categories} 
+        setSearch={setSearch} 
+        username={username} 
+      />
 
-
-      <CategorySection id="favorites" category="favorites" search={search} />
-
-      {categories.map((cat) => (
-        <CategorySection
-          key={cat}
-          id={cat} 
-          category={cat}
-          search={search}
-        />
-      ))}
-
-      <Footer />
+      <AppRouter
+        categories={categories}
+        search={search}
+        username={username}
+        customMovies={customMovies}
+        addMovie={addMovie}
+      />
     </div>
   );
 }
-
-export default App;
